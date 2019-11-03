@@ -10,7 +10,7 @@
 
 ## `前情提要`  1. 開啟所需要修改的範例專案
 * 所有程式碼都改自官方提供的範例程式，不同範例存在不同資料夾內。基本上都存在下面的路徑內，實際路徑可能有些許不同，但都是在 `C:\Holtek\` 資料夾內。
-<table>
+<table align="right">
 <tr>
 <td>
   
@@ -19,7 +19,7 @@
 </tr>
 <tr>
 <td>
-<img src="/images/Intro.gif"</img>
+<img src="/images/Intro.gif" width="401" height="345"</img>
 </td>
 </tr>
 </table>
