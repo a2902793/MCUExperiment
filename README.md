@@ -8,21 +8,15 @@
 <br>
 
 ## 前情提要
+所有程式碼都改自官方提供的範例程式，不同範例存在不同資料夾內。基本上都存在下面的路徑內，實際路徑可能有些許不同，但都是在 `C:\Holtek` 資料夾內。
 <table>
-<tr>
-<td colspan="2">
-
-  所有程式碼都改自官方提供的範例程式，不同範例存在不同資料夾內。基本上都存在下面的路徑內，實際路徑可能有些許不同，但都是在 `C:\Holtek` 資料夾內
-</td>
-</tr>
 <tr>
 <td>
   
-  ```
-  C:\Holtek\
-  HT32_STD_5xxxx_FWLib_v011_4188\example
-  ```
+  `C:\Holtek\HT32_STD_5xxxx_FWLib_v011_4188\example`
 </td>
+</tr>
+<tr>
 <td>
 <img src="/images/Intro.gif"</img>
 </td>
