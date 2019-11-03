@@ -7,8 +7,8 @@
 <br>
 <br>
 
-## 前情提要
-所有程式碼都改自官方提供的範例程式，不同範例存在不同資料夾內。基本上都存在下面的路徑內，實際路徑可能有些許不同，但都是在 `C:\Holtek` 資料夾內。
+## 前情提要 - 開啟所需要修改的範例專案
+* 所有程式碼都改自官方提供的範例程式，不同範例存在不同資料夾內。基本上都存在下面的路徑內，實際路徑可能有些許不同，但都是在 `C:\Holtek` 資料夾內。
 <table>
 <tr>
 <td>
@@ -19,6 +19,24 @@
 <tr>
 <td>
 <img src="/images/Intro.gif"</img>
+</td>
+</tr>
+</table>
+
+<br>
+
+* 點進所想要使用的範例程式後，執行 `_CreateProject.bat`。它會自動幫你生成所需要的專案。
+這裡以 `GPIO` 的 `InputOutput` 為例（如果只需要控制按鈕跟LED，修改這個範例就可以了），等執行完後會生出很多檔案和資料夾，進到 `MDK_ARMv5` 資料夾並執行 `Project_52352.uvprojx` ，演示和路徑如下。
+<table>
+<tr>
+<td>
+  
+  `C:\Holtek\HT32_STD_5xxxx_FWLib_v011_4188\example\GPIO\InputOutput\MDK_ARMv5\Project_52352.uvprojx`
+</td>
+</tr>
+<tr>
+<td>
+<img src="/images/CreateProject.gif"</img>
 </td>
 </tr>
 </table>
@@ -41,7 +59,7 @@
 <table>
 <tr>
 <td>
-  
+    
   **For Linux**
   ```shell
   ifconfig `route | grep ^default | sed "s/.* //"` |
