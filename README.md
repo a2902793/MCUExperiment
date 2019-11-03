@@ -1,31 +1,30 @@
-Command Line (Bash/Zsh)
+微處理機實驗考試
 ------
-把你想要的功能貼在你的 `~/.bashrc`、`~/.zshrc` 或 `~/.bash_profile` 最下面
-記得 `source` 讓你剛貼近去的指令生效
+這個教學只適用於108學年第1學期微處理機實驗課的期中考，所使用的板子型號是HT32F52352。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `程式碼歸盛群半導體股份有限公司（以下稱 Holtek）所有。`
+
 <br>
 <br>
-## lazyclone
+
+## 前情提要
 <table>
-<tr>
-<td>
-  
-  ```shell
-  function lazyclone {
-      reponame=${1##*/}
-      reponame=${reponame%.git}
-      git clone "$1" "$reponame";
-      cd "$reponame";
-  }
-  ```
-</td>
-<td>
-<img src="/images/lazyclone.png"</img>
-</td>
-</tr>
 <tr>
 <td colspan="2">
 
-  可以把repo抓下來後自動 `cd` 進去
+  所有程式碼都改自官方提供的範例程式，不同範例存在不同資料夾內。基本上都存在下面的路徑內，實際路徑可能有些許不同，但都是在 `C:\Holtek` 資料夾內
+</td>
+</tr>
+<tr>
+<td>
+  
+  ```
+  C:\Holtek\
+  HT32_STD_5xxxx_FWLib_v011_4188\example
+  ```
+</td>
+<td>
+<img src="/images/Intro.gif"</img>
 </td>
 </tr>
 </table>
