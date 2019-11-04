@@ -104,16 +104,41 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 `LED燈` `按鈕` <br>
 ##### 2. 怎麼用？
 這題選用 `MCTM` 範例。
-###### &nbsp;&nbsp;&nbsp;&nbsp;a) 設定 CKCU
+
+<table>
+<tr>
+<td>
+<p align="center">第一步、設定 CKCU</p>
+</td>
+</tr>
+<tr>
+<td>
+ 
+  &nbsp;&nbsp;&nbsp;&nbsp;LED 及 MCTM 所需要的時鐘已設定好，尚缺按鈕所需要用的，第一顆按鈕為 `B12` 所以在 `GPIO_Configuration(void)`
+  &nbsp;&nbsp;&nbsp;&nbsp;裡面添加啟用 Port B 的時鐘。
+</td>
+</tr>
+<tr>
+<td>
+  
+  ```
+  CKCUClock.Bit.PB = 1;
+  ```
+</td>
+</tr>
+</table>
+
+<p align="center">第一步、設定 CKCU</p>
+
 &nbsp;&nbsp;&nbsp;&nbsp;LED 及 MCTM 所需要的時鐘已設定好，尚缺按鈕所需要用的，第一顆按鈕為 `B12` 所以在 `GPIO_Configuration(void)`
+<br>
 &nbsp;&nbsp;&nbsp;&nbsp;裡面添加啟用 Port B 的時鐘。
 ```
 CKCUClock.Bit.PB = 1;
 ```
-<br>
-
-###### &nbsp;&nbsp;&nbsp;&nbsp;b) 設定 GPIO
+###### &nbsp;&nbsp;&nbsp;&nbsp;第二步、設定 GPIO
 &nbsp;&nbsp;&nbsp;&nbsp;裡面已經設定好 `LED` 也就是 `C1`、下面 `C4` 腳位是在設定 MCTM 的中斷不要刪掉，刪了燈不會閃爍。
+<br>
 &nbsp;&nbsp;&nbsp;&nbsp;因為要用到按鈕，所以還要增加按鈕相關的設定。從第三周的 PPT 裡面可以知道，最少需要增加4項設定也就是 `AFIO_GPxConfig`、`GPIO_DirectionConfig`、`GPIO_PullResistorConfig`、`GPIO_InputConfig`。<br>
 <p align="center">:mega:設定腳位的API可以參考第三周投影片第20頁</p>
 
