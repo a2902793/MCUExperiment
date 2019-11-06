@@ -8,7 +8,7 @@
 <br>
 <br>
 
-## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `前情提要`
+## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `前情提要`
 
 ###  1. 準備環境
 a) 參考第一週投影片設置開發板的燒錄設定，確保以下設定都有做到，不然燒錄可能成功但板子不會有反應
@@ -80,7 +80,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 <br>
 <br>
 
-## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `考題講解`
+## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `考題講解`
 
 <br>
 <br>
@@ -103,44 +103,80 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 ##### 1. 需要用到什麼元件？
 `LED燈` `按鈕` <br>
 ##### 2. 怎麼用？
-這題選用 `MCTM` 範例。
+這題選用助教給的 `期中考提供資料包` > `實驗06：計時器—GPTM_MCTM` > `範例` > `MCTM` > `呼吸燈` > `main.c` 範例。
 
 <table>
 <tr>
-<td>
+<td colspan="3">
 <p align="center">第一步、設定 CKCU</p>
 </td>
 </tr>
 <tr>
 <td>
- 
-  &nbsp;&nbsp;&nbsp;&nbsp;LED 及 MCTM 所需要的時鐘已設定好，尚缺按鈕所需要用的，第一顆按鈕為 `B12` 所以在 `GPIO_Configuration(void)`
-  &nbsp;&nbsp;&nbsp;&nbsp;裡面添加啟用 Port B 的時鐘。
+  1
 </td>
-</tr>
-<tr>
+<td>
+ 
+  &nbsp;&nbsp;&nbsp;&nbsp;LED 及 MCTM 所需要的時鐘已設定好，尚缺按鈕所需要用的，第一顆按鈕為 `B12` 所以在 `GPIO_Configuration(void)` 裡面添加啟用 Port B 的時鐘。
+</td>
 <td>
   
-  ```
-  CKCUClock.Bit.PB = 1;
-  ```
+ ```diff
+ void CKCU_Configuration(void)
+ {
+     CKCU_PeripClockConfig_TypeDef CKCUClock = {{ 0 }};
+     CKCUClock.Bit.AFIO       = 1;
+     CKCUClock.Bit.MCTM0      = 1;
+ +   CKCUClock.Bit.PB 	     = 1;
+     CKCU_PeripClockConfig(CKCUClock, ENABLE);
+ }
+ ```
 </td>
 </tr>
 </table>
 
-<p align="center">第一步、設定 CKCU</p>
+<table>
+<tr>
+<td colspan="3">
+<p align="center">第二步、設定 GPIO</p>
+</td>
+</tr>
+<tr>
+<td>
+  1
+</td>
+<td>
+ 
+  &nbsp;&nbsp;&nbsp;&nbsp;裡面已經設定好 `LED` 也就是 `C1`、下面 `C4` 腳位是在設定 MCTM 的中斷不要刪掉，刪了就沒有時鐘燈也就不會閃爍。
+  <br>
+  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;因為要用到按鈕，所以還要增加按鈕相關的設定。從第三周的 PPT 裡面可以知道，最少需要增加4項設定也就是 `AFIO_GPxConfig`、`GPIO_DirectionConfig`、`GPIO_PullResistorConfig`、`GPIO_InputConfig`。
+</td>
+<td>
+  
+ ```diff
+ void GPIO_Configuration(void)
+ {
+     /* Configure MCTM Channel 0 output pin */
+     AFIO_GPxConfig(GPIO_PC, AFIO_PIN_1, AFIO_FUN_MCTM_GPTM);
 
-&nbsp;&nbsp;&nbsp;&nbsp;LED 及 MCTM 所需要的時鐘已設定好，尚缺按鈕所需要用的，第一顆按鈕為 `B12` 所以在 `GPIO_Configuration(void)`
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;裡面添加啟用 Port B 的時鐘。
-```
-CKCUClock.Bit.PB = 1;
-```
-###### &nbsp;&nbsp;&nbsp;&nbsp;第二步、設定 GPIO
-&nbsp;&nbsp;&nbsp;&nbsp;裡面已經設定好 `LED` 也就是 `C1`、下面 `C4` 腳位是在設定 MCTM 的中斷不要刪掉，刪了燈不會閃爍。
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;因為要用到按鈕，所以還要增加按鈕相關的設定。從第三周的 PPT 裡面可以知道，最少需要增加4項設定也就是 `AFIO_GPxConfig`、`GPIO_DirectionConfig`、`GPIO_PullResistorConfig`、`GPIO_InputConfig`。<br>
-<p align="center">:mega:設定腳位的API可以參考第三周投影片第20頁</p>
+     /* Configure MCTM Break pin */
+     AFIO_GPxConfig(GPIO_PB, AFIO_PIN_4, AFIO_FUN_MCTM_GPTM);
+	
+ +   AFIO_GPxConfig(GPIO_PB, AFIO_PIN_12, AFIO_FUN_GPIO);
+ +   GPIO_DirectionConfig(HT_GPIOB, GPIO_PIN_12, GPIO_DIR_IN);
+ +   GPIO_PullResistorConfig(HT_GPIOB, GPIO_PIN_12, GPIO_PR_DISABLE);
+ +   GPIO_InputConfig(HT_GPIOB, GPIO_PIN_12, ENABLE);
+ }
+ ```
+</td>
+</tr>
+<tr>
+<td colspan="3">
+  <p align="center">:mega:設定腳位的API可以參考第三周投影片第20頁</p>
+</td>
+</tr>
+</table>
 
 ##### 3. 在main裡寫邏輯
 
