@@ -230,10 +230,10 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 <th rowspan="2">
   4
 </th>
-<th colspan="2">
+<td colspan="2">
 
   &nbsp;&nbsp;&nbsp;&nbsp;比較一下兩者的不同，一樣式 `一個脈波數一次，數5次就重置`，但系統時鐘因為數5次只要 `0.5秒` 而你用 `prescalar=2` 創出來的新 Clock 數五次需要 `1秒鐘`。
-</th>
+</td>
 </tr>
 <tr>
 <td>
