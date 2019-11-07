@@ -216,7 +216,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 </tr>
 <tr>
 <td>
-  3
+  4
 </td>
 <td>
 	
@@ -228,7 +228,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 </tr>
 <tr>
 <th rowspan="2">
-  4
+  5
 </th>
 <td colspan="2">
 
@@ -241,6 +241,63 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 </td>
 <td>
 <img src="/images/MCTM/Comp_NewClock.png"</img>
+</td>
+</tr>
+<tr>
+<td>
+  6
+</td>
+<td>
+	
+  &nbsp;&nbsp;&nbsp;&nbsp;最後一個要理解的功能是 `Compare` 也就是一個比較值。這裡用 `MCTM_OutputInitStructure.Compare = HTCFG_MCTM_RELOAD * 3/5` 當範例 `HTCFG_MCTM_RELOAD` 等於 `5` 所以 5 * 3/5 = `3`。它會比較目前的計數有沒有小於3，是則高電位、否則低電位。
+</td>
+<td>
+<img src="/images/MCTM/Compare.png"</img>
+</td>
+</tr>
+<tr>
+<td>
+  7
+</td>
+<td>
+	
+  &nbsp;&nbsp;&nbsp;&nbsp;實際情況是：系統時鐘 `48MHz`
+  &nbsp;&nbsp;&nbsp;&nbsp;計數器也就是 ( `HTCFG_MCTM_RELOAD` ) = 48MHz/2000 = `24000`
+  &nbsp;&nbsp;&nbsp;&nbsp;`Compare` 是設成 `1/2`，也就是一半的時間 High、一半的時間 Low
+</td>
+<td>
+<img src="/images/MCTM/3in1.png"</img>
+</td>
+</tr>
+<tr>
+<td>
+  8
+</td>
+<td>
+	
+  &nbsp;&nbsp;&nbsp;&nbsp;因為助教給的這個範例多半設定已經寫好，這裡只需要改 `Prescalar` 和 `Compare`。
+</td>
+<td>
+  
+ ```diff
+ void MCTM_Configuration(void)
+ {
+     .
+     .
+     .
+ -   MCTM_TimeBaseInitStructure.Prescaler = 0;
+ +   MCTM_TimeBaseInitStructure.Prescaler = 6000;
+     .
+     .
+     .
+     MCTM_OutputInitStructure.Channel = TM_CH_0;
+ -   MCTM_OutputInitStructure.Compare = HTCFG_MCTM_RELOAD * 1/2;
+ +   MCTM_OutputInitStructure.Compare = HTCFG_MCTM_RELOAD * 2/3;
+     .
+     .
+     .
+ }
+ ```
 </td>
 </tr>
 </table>
