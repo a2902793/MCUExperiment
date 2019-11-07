@@ -196,10 +196,12 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 </td>
 <td>
 	
-  &nbsp;&nbsp;&nbsp;&nbsp;又有一個計數器，每一個脈波就計數一次，數五次 (0、1、2、3、4) 就重置也就是重新計數
+  &nbsp;&nbsp;&nbsp;&nbsp;有一個計數器叫 `HTCFG_MCTM_RELOAD`
+  <br>
+  其值等於 `5`，也就是每一個脈波就計數一次、數五次 (0、1、2、3、4) 就重新計數
 </td>
 <td>
-<img src="images/MCTM/Reset.png"</img>
+<img src="images/MCTM/Count.png"</img>
 </td>
 </tr>
 <tr>
@@ -220,28 +222,54 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 </td>
 <td>
 	
-  &nbsp;&nbsp;&nbsp;&nbsp;今天你新創了一個時鐘，原先一秒數 `10次` 被你換成一秒數 `5次`，也就是 `10/prescalar次` `prescalar=2`，這時候計數器仍然是 `一個脈波數一次，數5次就重置`
+  &nbsp;&nbsp;&nbsp;&nbsp;MCTM 裡面有個很重要的變數叫 `prescalar` 是用來除頻，換句話說就是 `頻率除以某數` 來調整 Clock 一秒數幾次。
+  <br>
+  
+  原先 Clock 一秒數 `10次`，今天你新創了一個 Clock 想要一秒數 `5次`，就把 `prescalar` 設成 `2`，新的頻率就會是 `10/prescalar次` `prescalar=2`。
 </td>
 <td>
 <img src="images/MCTM/NewClock.png"</img>
+<br>
+
+  :mega: 注意哦～計數器一樣抱持不變，仍然是 `一個脈波數一次，數5次就重置`
 </td>
 </tr>
 <tr>
-<th rowspan="2">
+<th rowspan="4">
   5
 </th>
-<td colspan="2">
-
-  &nbsp;&nbsp;&nbsp;&nbsp;比較一下兩者的不同，一樣式 `一個脈波數一次，數5次就重置`，但系統時鐘因為數5次只要 `0.5秒` 而你用 `prescalar=2` 創出來的新 Clock 數五次需要 `1秒鐘`。
+<td rowspan="4">
+<p align="center">
+比較一下兩者的不同，同樣都是
+</p>
+	
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`一個脈波數一次，數5次就重置`
+  <br>
+  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&thinsp;&thinsp;`系統 Clock` 數5次： `0.5秒` 
+  <br>
+  `prescalar=2 的 Clock` 數5次： `1秒鐘`
 </td>
+<th>	
+系統 Clock
+</th>
 </tr>
 <tr>
 <td>
 <img src="images/MCTM/Comp_OriginalClock.png"</img>
 </td>
+</tr>
+<tr>
+<th>
+Prescalar=2 的Clock
+</th>
+</tr>
+<tr>
 <td>
 <img src="images/MCTM/Comp_NewClock.png"</img>
 </td>
+</tr>
+<tr>
 </tr>
 <tr>
 <td>
@@ -249,7 +277,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 </td>
 <td>
 	
-  &nbsp;&nbsp;&nbsp;&nbsp;最後一個要理解的功能是 `Compare` 也就是一個比較值。這裡用 `MCTM_OutputInitStructure.Compare = HTCFG_MCTM_RELOAD * 3/5` 當範例 `HTCFG_MCTM_RELOAD` 等於 `5` 所以 5 * 3/5 = `3`。它會比較目前的計數有沒有小於3，是則高電位、否則低電位。
+  &nbsp;&nbsp;&nbsp;&nbsp;最後一個要理解的功能是 `Compare` 也就是一個比較值。這裡用 `MCTM_OutputInitStructure.Compare = HTCFG_MCTM_RELOAD * 3/5` 當範例。`HTCFG_MCTM_RELOAD` 等於 `5` 所以 5 * 3/5 = `3`。它會比較目前的計數有沒有小於3，小於則低電位、大則高電位。
 </td>
 <td>
 <img src="images/MCTM/Compare.png"</img>
