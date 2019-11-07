@@ -24,7 +24,7 @@ b) 再依照題目選一範例進行修改
   所有程式碼都改自官方提供的範例程式，不同範例存在不同資料夾內。基本上都存在下面的路徑內，實際路徑可能有些許不同，但都是在 `C:\Holtek\` 資料夾內。
 </td>
 <td>
-<img src="/images/Intro.gif"</img>
+<img src="images/Intro.gif"</img>
 </td>
 </tr>
 <tr>
@@ -44,7 +44,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
   這裡以 `GPIO` 的 `InputOutput` 為例（如果只需要控制按鈕跟LED，修改這個範例就可以了），等執行完後會生出很多檔案和資料夾，進到 `MDK_ARMv5` 資料夾並執行 `Project_52352.uvprojx` ，演示和路徑如下。
 </td>
 <td td colspan=8>
-<img src="/images/CreateProject.gif"</img>
+<img src="images/CreateProject.gif"</img>
 </td>
 </tr>
 <tr>
@@ -187,7 +187,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
   &nbsp;&nbsp;&nbsp;&nbsp;假設系統是一個 `10Hz` 的時鐘，也就是說一秒會有 10 個脈波。
 </td>
 <td>
-<img src="/images/MCTM/Clock.png"</img>
+<img src="images/MCTM/Clock.png"</img>
 </td>
 </tr>
 <tr>
@@ -199,7 +199,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
   &nbsp;&nbsp;&nbsp;&nbsp;又有一個計數器，每一個脈波就計數一次，數五次 (0、1、2、3、4) 就重置也就是重新計數
 </td>
 <td>
-<img src="/images/MCTM/Reset.png"</img>
+<img src="images/MCTM/Reset.png"</img>
 </td>
 </tr>
 <tr>
@@ -211,7 +211,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
   &nbsp;&nbsp;&nbsp;&nbsp;所以系統時鐘、計數器、重置的情況疊在一起像這樣
 </td>
 <td>
-<img src="/images/MCTM/3in1.png"</img>
+<img src="images/MCTM/3in1.png"</img>
 </td>
 </tr>
 <tr>
@@ -223,7 +223,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
   &nbsp;&nbsp;&nbsp;&nbsp;今天你新創了一個時鐘，原先一秒數 `10次` 被你換成一秒數 `5次`，也就是 `10/prescalar次` `prescalar=2`，這時候計數器仍然是 `一個脈波數一次，數5次就重置`
 </td>
 <td>
-<img src="/images/MCTM/NewClock.png"</img>
+<img src="images/MCTM/NewClock.png"</img>
 </td>
 </tr>
 <tr>
@@ -237,10 +237,10 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 </tr>
 <tr>
 <td>
-<img src="/images/MCTM/Comp_OriginalClock.png"</img>
+<img src="images/MCTM/Comp_OriginalClock.png"</img>
 </td>
 <td>
-<img src="/images/MCTM/Comp_NewClock.png"</img>
+<img src="images/MCTM/Comp_NewClock.png"</img>
 </td>
 </tr>
 <tr>
@@ -252,7 +252,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
   &nbsp;&nbsp;&nbsp;&nbsp;最後一個要理解的功能是 `Compare` 也就是一個比較值。這裡用 `MCTM_OutputInitStructure.Compare = HTCFG_MCTM_RELOAD * 3/5` 當範例 `HTCFG_MCTM_RELOAD` 等於 `5` 所以 5 * 3/5 = `3`。它會比較目前的計數有沒有小於3，是則高電位、否則低電位。
 </td>
 <td>
-<img src="/images/MCTM/Compare.png"</img>
+<img src="images/MCTM/Compare.png"</img>
 </td>
 </tr>
 <tr>
@@ -266,7 +266,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
   &nbsp;&nbsp;&nbsp;&nbsp;`Compare` 是設成 `1/2`，也就是一半的時間 High、一半的時間 Low
 </td>
 <td>
-<img src="/images/MCTM/3in1.png"</img>
+<img src="images/MCTM/3in1.png"</img>
 </td>
 </tr>
 <tr>
