@@ -8,7 +8,7 @@
 <br>
 <br>
 
-## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `前情提要`
+## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `前情提要`
 
 ###  1. 準備環境
 a) 參考第一週投影片設置開發板的燒錄設定，確保以下設定都有做到，不然燒錄可能成功但板子不會有反應
@@ -118,8 +118,20 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
   3
 </td>
 <td>
+ 
+  &nbsp;&nbsp;&nbsp;&nbsp;這個是重置的狀態，以這張圖為例表示發生了兩次重置（重新計數）。
+</td>
+<td>
+<img src="images/MCTM/Reset.png"</img>
+</td>
+</tr>
+<tr>
+<td>
+  4
+</td>
+<td>
 	
-  &nbsp;&nbsp;&nbsp;&nbsp;所以系統時鐘、計數器、重置的情況疊在一起像這樣
+  &nbsp;&nbsp;&nbsp;&nbsp;所以系統時鐘、計數器、重置的情況疊在一起像這樣。
 </td>
 <td>
 <img src="images/MCTM/3in1.png"</img>
@@ -127,7 +139,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 </tr>
 <tr>
 <td>
-  4
+  5
 </td>
 <td>
 	
@@ -140,19 +152,19 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 <img src="images/MCTM/NewClock.png"</img>
 <br>
 
-  :mega: 注意哦～計數器一樣抱持不變，仍然是 `一個脈波數一次，數5次就重置`
+  :mega: 注意哦～計數器沒變，仍然是 `一個脈波數一次，數5次就重置`
 </td>
 </tr>
 <tr>
 <th rowspan="4">
-  5
+  6
 </th>
 <td rowspan="4">
 <p align="center">
 比較一下兩者的不同，同樣都是
 </p>
 	
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`一個脈波數一次，數5次就重置`
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`一個脈波數一次，數5次就重置`
   <br>
   <br>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&thinsp;&thinsp;`系統 Clock` 數5次： `0.5秒` 
@@ -182,7 +194,7 @@ Prescalar=2 的Clock
 </tr>
 <tr>
 <td>
-  6
+  7
 </td>
 <td>
 	
@@ -194,7 +206,7 @@ Prescalar=2 的Clock
 </tr>
 <tr>
 <td>
-  7
+  8
 </td>
 <td>
 	
