@@ -209,13 +209,8 @@ Prescalar=2 的 Clock
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`小於則低電位、大於等於則高電位`
 </td>
 <td>
-<img src="images/MCTM/Compare.png"</img>
-
-  &nbsp;&nbsp;&nbsp;&nbsp;舉例：`MCTM_OutputInitStructure.Compare = HTCFG_MCTM_RELOAD * 3/5`
-  <br>
-  
-  &nbsp;&nbsp;&nbsp;&nbsp;`HTCFG_MCTM_RELOAD` 等於 `5` 所以
-  <img align="center" height="25" src="https://latex.codecogs.com/svg.latex?5%5Ctimes%5Cfrac%7B3%7D%7B5%7D%3D3"> :point_right: <ins>< 3 低電位、>= 3 則高電位。<ins>
+<img src="images/MCTM/Compare.png"</img><br><br>
+<img src="images/MCTM/MathEquation.png"</img>
 </td>
 </tr>
 <tr>
