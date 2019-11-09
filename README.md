@@ -93,7 +93,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 </td>
 <td>
  
-  &nbsp;&nbsp;&nbsp;&nbsp;假設系統是一個 `10Hz` 的時鐘，也就是說一秒會有 10 個脈波。
+  假設系統是一個 `10Hz` 的時鐘，也就是說一秒會有 10 個脈波。
 </td>
 <td>
 <img src="images/MCTM/Clock.png"</img>
@@ -105,7 +105,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 </td>
 <td>
 	
-  &nbsp;&nbsp;&nbsp;&nbsp;有一個計數器叫 `HTCFG_MCTM_RELOAD`
+  有一個計數器叫 `HTCFG_MCTM_RELOAD`
   <br>
   其值等於 `5`，也就是每一個脈波就計數一次、數五次 (0、1、2、3、4) 就重新計數
 </td>
@@ -119,7 +119,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 </td>
 <td>
  
-  &nbsp;&nbsp;&nbsp;&nbsp;這個是重置的狀態，以這張圖為例表示發生了兩次重置（重新計數）。
+  這個是重置的狀態，以這張圖為例表示發生了兩次重置（重新計數）。
 </td>
 <td>
 <img src="images/MCTM/Reset.png"</img>
@@ -131,19 +131,24 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 </td>
 <td>
 	
-  &nbsp;&nbsp;&nbsp;&nbsp;所以系統時鐘、計數器、重置的情況疊在一起像這樣。
+  所以系統時鐘、計數器、重置的情況疊在一起像這樣。
 </td>
 <td>
 <img src="images/MCTM/3in1.png"</img>
 </td>
 </tr>
+</table>
+<br>
+<p align="center">———————&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;到這裡都還能理解吧？上面有看懂再往下看&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;———————</p>
+<br>
+<table>
 <tr>
 <td>
   5
 </td>
 <td>
 	
-  &nbsp;&nbsp;&nbsp;&nbsp;MCTM 裡面有個很重要的變數叫 `prescalar` 是用來除頻，換句話說就是 `頻率除以某數` 來調整 Clock 一秒數幾次。
+  MCTM 裡面有個很重要的變數叫 `prescalar` 是用來除頻，換句話說就是 `頻率除以某數` 來調整 Clock 一秒數幾次。
   <br>
   
   原先 Clock 一秒數 `10次`，今天你新創了一個 Clock 想要一秒數 `5次`，就把 `prescalar` 設成 `2`，新的頻率就會是 `10/prescalar次` `prescalar=2`。
@@ -164,12 +169,12 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 比較一下兩者的不同，同樣都是
 </p>
 	
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`一個脈波數一次，數5次就重置`
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`一個脈波數一次，數5次就重置`
   <br>
   <br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&thinsp;&thinsp;`系統 Clock` 數5次： `0.5秒` 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&thinsp;&thinsp;`系統 Clock` 數5次： `0.5秒` 
   <br>
-  `prescalar=2 的 Clock` 數5次： `1秒鐘`
+  `prescalar=2 Clock` 數5次： `1秒鐘`
 </td>
 <th>	
 系統 Clock
@@ -182,7 +187,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 </tr>
 <tr>
 <th>
-Prescalar=2 的Clock
+Prescalar=2 的 Clock
 </th>
 </tr>
 <tr>
@@ -198,10 +203,19 @@ Prescalar=2 的Clock
 </td>
 <td>
 	
-  &nbsp;&nbsp;&nbsp;&nbsp;最後一個要理解的功能是 `Compare` 也就是一個比較值。這裡用 `MCTM_OutputInitStructure.Compare = HTCFG_MCTM_RELOAD * 3/5` 當範例。`HTCFG_MCTM_RELOAD` 等於 `5` 所以 5 * 3/5 = `3`。它會比較目前的計數有沒有小於3，小於則低電位、大則高電位。
+  最後一個要理解的功能是 `Compare` 也就是一個比較值，它會跟計數器比較：
+  <br>
+  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`小於則低電位、大於等於則高電位`
 </td>
 <td>
 <img src="images/MCTM/Compare.png"</img>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;舉例：`MCTM_OutputInitStructure.Compare = HTCFG_MCTM_RELOAD * 3/5`
+  <br>
+  
+  &nbsp;&nbsp;&nbsp;&nbsp;`HTCFG_MCTM_RELOAD` 等於 `5` 所以
+  <img align="center" height="25" src="https://latex.codecogs.com/svg.latex?5%5Ctimes%5Cfrac%7B3%7D%7B5%7D%3D3"> :point_right: <ins>< 3 低電位、>= 3 則高電位。<ins>
 </td>
 </tr>
 <tr>
