@@ -210,7 +210,7 @@ Prescalar=2 的 Clock
 </td>
 <td>
 <img src="images/MCTM/Compare.png"</img><br><br>
-<img src="images/MCTM/MathEquation.png"</img>
+<img src="images/MCTM/MathEquation2.png"</img>
 </td>
 </tr>
 <tr>
