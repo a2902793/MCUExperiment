@@ -168,13 +168,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 <p align="center">
 比較一下兩者的不同，同樣都是
 </p>
-	
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`一個脈波數一次，數5次就重置`
-  <br>
-  <br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&thinsp;&thinsp;`系統 Clock` 數5次： `0.5秒` 
-  <br>
-  `prescalar=2 Clock` 數5次： `1秒鐘`
+<img align="center" src="images/MCTM/PrescalerExplanation.png"/>
 </td>
 <th>	
 系統 Clock
@@ -206,7 +200,7 @@ Prescalar=2 的 Clock
   最後一個要理解的功能是 `Compare` 也就是一個比較值，它會跟計數器比較：
   <br>
   
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`小於則低電位、大於等於則高電位`
+  &nbsp;&nbsp;&nbsp;`小於則低電位、大於等於則高電位`
 </td>
 <td>
 <img src="images/MCTM/Compare.png"/><br><br>
@@ -219,9 +213,10 @@ Prescalar=2 的 Clock
 </td>
 <td>
 	
-  &nbsp;&nbsp;&nbsp;&nbsp;實際情況是：系統時鐘 `48MHz`
-  &nbsp;&nbsp;&nbsp;&nbsp;計數器也就是 ( `HTCFG_MCTM_RELOAD` ) = 48MHz/2000 = `24000`
-  &nbsp;&nbsp;&nbsp;&nbsp;`Compare` 是設成 `1/2`，也就是一半的時間 High、一半的時間 Low
+  實際情況是：<br><br>
+  * 系統時鐘 `48MHz` <br>
+  * 計數器 (`HTCFG_MCTM_RELOAD`) = 48MHz/2000 = `24000` <br>
+  * `Compare` 是設成 `1/2`，也就是一半的時間 High、一半的時間 Low
 </td>
 <td>
 <img src="images/MCTM/3in1.png"/>
@@ -233,11 +228,25 @@ Prescalar=2 的 Clock
 
 <table>
 <tr>
+<th>
+Prescaler
+</th>
+<th>
+實際影像
+</th>
+<th>
+波形圖
+</th>
+</tr>
+<tr>
+<th>
+2000
+</th>
 <td>
 <img src="images/MCTM/ActualImages/1s1-2_Blink.gif" width="196" height="244"/>
 </td>
 <td>
-<img src="images/MCTM/ActualImages/1s1-2_Waveform.gif" width="329" height="243"/>
+<img src="images/MCTM/ActualImages/1s1-2_Waveform.gif" width="329" height="244"/>
 </td>
 </tr>
 </table>
