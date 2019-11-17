@@ -242,13 +242,24 @@ Prescaler
 </tr>
 <tr>
 <th>
-4000
+2000
 </th>
 <td>
 <img src="images/MCTM/ActualImages/1s1-2_Blink.gif" width="196" height="244"/>
 </td>
 <td>
 <img src="images/MCTM/ActualImages/1s1-2_Waveform.gif" width="329" height="244"/>
+</td>
+</tr>
+<tr>
+<th>
+4000
+</th>
+<td>
+<img src="images/MCTM/ActualImages/2s1-2_Blink.gif" width="196" height="244"/>
+</td>
+<td>
+<img src="images/MCTM/ActualImages/2s1-2_Waveform.gif" width="329" height="244"/>
 </td>
 </tr>
 </table>
