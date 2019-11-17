@@ -234,10 +234,10 @@ Prescalar=2 的 Clock
 <table>
 <tr>
 <td>
-<img src="images/MCTM/ActualImages/1s1-2_Blink.gif"/>
+<img src="images/MCTM/ActualImages/1s1-2_Blink.gif" width="196" height="244"/>
 </td>
 <td>
-<img src="images/MCTM/ActualImages/1s1-2_Waveform.gif"/>
+<img src="images/MCTM/ActualImages/1s1-2_Waveform.gif" width="329" height="243"/>
 </td>
 </tr>
 </table>
