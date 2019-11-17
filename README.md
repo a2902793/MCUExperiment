@@ -168,6 +168,8 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 <p align="center">
 比較一下兩者的不同，同樣都是
 </p>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`一個脈波數一次，數5次就重置`
 <img align="center" src="images/MCTM/PrescalerExplanation.png"/>
 </td>
 <th>	
