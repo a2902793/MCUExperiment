@@ -24,7 +24,7 @@ b) 再依照題目選一範例進行修改
   所有程式碼都改自官方提供的範例程式，不同範例存在不同資料夾內。基本上都存在下面的路徑內，實際路徑可能有些許不同，但都是在 `C:\Holtek\` 資料夾內。
 </td>
 <td>
-<img src="images/Intro.gif"</img>
+<img src="images/Intro.gif"/>
 </td>
 </tr>
 <tr>
@@ -44,7 +44,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
   這裡以 `GPIO` 的 `InputOutput` 為例（如果只需要控制按鈕跟LED，修改這個範例就可以了），等執行完後會生出很多檔案和資料夾，進到 `MDK_ARMv5` 資料夾並執行 `Project_52352.uvprojx` ，演示和路徑如下。
 </td>
 <td td colspan=8>
-<img src="images/CreateProject.gif"</img>
+<img src="images/CreateProject.gif"/>
 </td>
 </tr>
 <tr>
@@ -96,7 +96,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
   假設系統是一個 `10Hz` 的時鐘，也就是說一秒會有 10 個脈波。
 </td>
 <td>
-<img src="images/MCTM/Clock.png"</img>
+<img src="images/MCTM/Clock.png"/>
 </td>
 </tr>
 <tr>
@@ -110,7 +110,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
   其值等於 `5`，也就是每一個脈波就計數一次、數五次 (0、1、2、3、4) 就重新計數
 </td>
 <td>
-<img src="images/MCTM/Count.png"</img>
+<img src="images/MCTM/Count.png"/>
 </td>
 </tr>
 <tr>
@@ -122,7 +122,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
   這個是重置的狀態，以這張圖為例表示發生了兩次重置（重新計數）。
 </td>
 <td>
-<img src="images/MCTM/Reset.png"</img>
+<img src="images/MCTM/Reset.png"/>
 </td>
 </tr>
 <tr>
@@ -134,7 +134,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
   所以系統時鐘、計數器、重置的情況疊在一起像這樣。
 </td>
 <td>
-<img src="images/MCTM/3in1.png"</img>
+<img src="images/MCTM/3in1.png"/>
 </td>
 </tr>
 </table>
@@ -154,7 +154,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
   原先 Clock 一秒數 `10次`，今天你新創了一個 Clock 想要一秒數 `5次`，就把 `prescalar` 設成 `2`，新的頻率就會是 `10/prescalar次` `prescalar=2`。
 </td>
 <td>
-<img src="images/MCTM/NewClock.png"</img>
+<img src="images/MCTM/NewClock.png"/>
 <br>
 
   :mega: 注意哦～計數器沒變，仍然是 `一個脈波數一次，數5次就重置`
@@ -182,7 +182,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 </tr>
 <tr>
 <td>
-<img src="images/MCTM/Comp_OriginalClock.png"</img>
+<img src="images/MCTM/Comp_OriginalClock.png"/>
 </td>
 </tr>
 <tr>
@@ -192,7 +192,7 @@ Prescalar=2 的 Clock
 </tr>
 <tr>
 <td>
-<img src="images/MCTM/Comp_NewClock.png"</img>
+<img src="images/MCTM/Comp_NewClock.png"/>
 </td>
 </tr>
 <tr>
@@ -209,8 +209,8 @@ Prescalar=2 的 Clock
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`小於則低電位、大於等於則高電位`
 </td>
 <td>
-<img src="images/MCTM/Compare.png"</img><br><br>
-<img src="images/MCTM/MathEquation2.png"</img>
+<img src="images/MCTM/Compare.png"/><br><br>
+<img src="images/MCTM/MathEquation2.png"/>
 </td>
 </tr>
 <tr>
@@ -224,9 +224,20 @@ Prescalar=2 的 Clock
   &nbsp;&nbsp;&nbsp;&nbsp;`Compare` 是設成 `1/2`，也就是一半的時間 High、一半的時間 Low
 </td>
 <td>
-<img src="images/MCTM/3in1.png"</img>
+<img src="images/MCTM/3in1.png"/>
 </td>
 </tr>
 </table>
 
+<br>
 
+<table>
+<tr>
+<td>
+<img src="images/MCTM/ActualImages/1s1-2_Blink.gif"/>
+</td>
+<td>
+<img src="images/MCTM/ActualImages/1s1-2_Waveform.gif"/>
+</td>
+</tr>
+</table>
