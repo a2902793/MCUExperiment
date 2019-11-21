@@ -170,7 +170,8 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 </p>
 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`一個脈波數一次，數5次就重置`
-<img align="center" src="images/MCTM/PrescalerExplanation.png"/>
+  <br><br>
+<img align="center" height="43" src="images/MCTM/PrescalerExplanation.png"/>
 </td>
 <th>	
 系統 Clock
