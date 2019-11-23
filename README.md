@@ -1,14 +1,10 @@
 # 微處理機實驗考試
 這個教學只適用於108學年第1學期微處理機實驗課的期中考，所使用的板子型號是HT32F52352。
 <br>
+<p align="center"><code>程式碼歸盛群半導體股份有限公司（Holtek）所有。</code></p>
 <br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `程式碼歸盛群半導體股份有限公司（Holtek）所有。`
-
-<br>
-<br>
-
-## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `前情提要`
+<p align="center"><h1 align="center"><code>前情提要</code></h1></p>
 
 ###  1. 準備環境
 a) 參考第一週投影片設置開發板的燒錄設定，確保以下設定都有做到，不然燒錄可能成功但板子不會有反應
@@ -21,7 +17,7 @@ b) 再依照題目選一範例進行修改
 <tr>
 <td>
   
-  所有程式碼都改自官方提供的範例程式，不同範例存在不同資料夾內。基本上都存在下面的路徑內，實際路徑可能有些許不同，但都是在 `C:\Holtek\` 資料夾內。
+  所有程式碼都改自官方提供的範例程式，不同範例存在不同資料夾內。基本上都存在下面的路徑內，實際路徑可能有些許不同，但都是在 `C:\Holtek\` 資料夾內，演示和路徑如右。
 </td>
 <td>
 <img src="images/Intro.gif"/>
@@ -41,7 +37,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 <tr>
 <td td colspan=4>
   
-  這裡以 `GPIO` 的 `InputOutput` 為例（如果只需要控制按鈕跟LED，修改這個範例就可以了），等執行完後會生出很多檔案和資料夾，進到 `MDK_ARMv5` 資料夾並執行 `Project_52352.uvprojx` ，演示和路徑如下。
+  這裡以 `GPIO` 的 `InputOutput` 為例（如果只需要控制按鈕跟LED，修改這個範例就可以了），等執行完後會生出很多檔案和資料夾，進到 `MDK_ARMv5` 資料夾並執行 `Project_52352.uvprojx` ，演示和路徑如右。
 </td>
 <td td colspan=8>
 <img src="images/CreateProject.gif"/>
@@ -75,17 +71,16 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 
 ### 4. 基本程式碼講解
 有些程式碼是開發版的基本設定，基本上每個自動生出來的範例裡面都有。基本上呢 ... 這些不會是你需要動到，也不太需要了解的（如果只是想應付這次考試的話可以直接跳到考題講解:smirk:）<br>
-也就是 `GPIO_PC, AFIO_PIN_1` 。往後的腳位都是用這個方法設定，也就是 GPIO 在前、AFIO 在後，為了講解方便 GPIO_P`C`, AFIO_PIN_`1`就簡稱 `C1`。<br>
+<del>也就是 `GPIO_PC, AFIO_PIN_1` 。往後的腳位都是用這個方法設定，也就是 GPIO 在前、AFIO 在後，為了講解方便 GPIO_P`C`, AFIO_PIN_`1`就簡稱 `C1`。</del>
 <br>
 <br>
 <br>
-
-## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `原理講解`
-
 <br>
+<p align="center"><h2 align="center"><code>原理講解</code></h2></p>
 <br>
 
 ## MCTM
+
 <table>
 <tr>
 <td>
@@ -165,12 +160,11 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
   6
 </th>
 <td rowspan="4">
-<p align="center">
 比較一下兩者的不同，同樣都是
-</p>
-
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`一個脈波數一次，數5次就重置`
-<img align="center" src="images/MCTM/PrescalerExplanation.png"/>
+<br><br>
+<p align="center"><code>一個脈波數一次，數5次就重置</code></p>
+<br>
+<img align="center" height="43" src="images/MCTM/PrescalerExplanation.png"/>
 </td>
 <th>	
 系統 Clock
@@ -200,9 +194,8 @@ Prescalar=2 的 Clock
 <td>
 	
   最後一個要理解的功能是 `Compare` 也就是一個比較值，它會跟計數器比較：
-  <br>
-  
-  &nbsp;&nbsp;&nbsp;`小於則低電位、大於等於則高電位`
+<br>
+<p align="center"><code>小於則低電位、大於等於則高電位</code></p>
 </td>
 <td>
 <img src="images/MCTM/Compare.png"/><br><br>
@@ -234,6 +227,9 @@ Prescalar=2 的 Clock
 Prescaler
 </th>
 <th>
+換算秒數
+</th>
+<th>
 實際影像
 </th>
 <th>
@@ -242,24 +238,58 @@ Prescaler
 </tr>
 <tr>
 <th>
-2000
+1000
+</th>
+<th>
+0.5 秒
 </th>
 <td>
-<img src="images/MCTM/ActualImages/1s1-2_Blink.gif" width="196" height="244"/>
+<img src="images/MCTM/ActualImages/0.5s_b.gif"/>
 </td>
 <td>
-<img src="images/MCTM/ActualImages/1s1-2_Waveform.gif" width="329" height="244"/>
+<img src="images/MCTM/ActualImages/0.5s_w.gif"/>
+</td>
+</tr>
+<tr>
+<th>
+2000
+</th>
+<th>
+1 秒
+</th>
+<td>
+<img src="images/MCTM/ActualImages/1s_b.gif"/>
+</td>
+<td>
+<img src="images/MCTM/ActualImages/1s_w.gif"/>
 </td>
 </tr>
 <tr>
 <th>
 4000
 </th>
+<th>
+2 秒
+</th>
 <td>
-<img src="images/MCTM/ActualImages/2s1-2_Blink.gif" width="196" height="244"/>
+<img src="images/MCTM/ActualImages/2s_b.gif"/>
 </td>
 <td>
-<img src="images/MCTM/ActualImages/2s1-2_Waveform.gif" width="329" height="244"/>
+<img src="images/MCTM/ActualImages/2s_w.gif"/>
+</td>
+</tr>
+<tr>
+<th>
+6000
+</th>
+<th>
+3 秒
+</th>
+<td>
+<img src="images/MCTM/ActualImages/3s_b.gif"/>
+</td>
+<td>
+<img src="images/MCTM/ActualImages/3s_w.gif"/>
 </td>
 </tr>
 </table>
