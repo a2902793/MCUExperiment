@@ -4,7 +4,7 @@
 <p align="center"><code>程式碼歸盛群半導體股份有限公司（Holtek）所有。</code></p>
 <br>
 <br>
-<p align="center"><h1 align="center"><code>前情提要</code></h1></p>
+<p align="center"><h2 align="center"><code>前情提要</code></h2></p>
 
 ###  1. 準備環境
 a) 參考第一週投影片設置開發板的燒錄設定，確保以下設定都有做到，不然燒錄可能成功但板子不會有反應
@@ -244,10 +244,10 @@ Prescaler
 0.5 秒
 </th>
 <td>
-<img src="images/MCTM/ActualImages/0.5s_b.gif"/>
+<img width="142" height="188" src="images/MCTM/ActualImages/0.5s_b.gif"/>
 </td>
 <td>
-<img src="images/MCTM/ActualImages/0.5s_w.gif"/>
+<img width="249" height="188" src="images/MCTM/ActualImages/0.5s_w.gif"/>
 </td>
 </tr>
 <tr>
@@ -258,10 +258,10 @@ Prescaler
 1 秒
 </th>
 <td>
-<img src="images/MCTM/ActualImages/1s_b.gif"/>
+<img width="142" height="188" src="images/MCTM/ActualImages/1s_b.gif"/>
 </td>
 <td>
-<img src="images/MCTM/ActualImages/1s_w.gif"/>
+<img width="249" height="188" src="images/MCTM/ActualImages/1s_w.gif"/>
 </td>
 </tr>
 <tr>
@@ -272,24 +272,10 @@ Prescaler
 2 秒
 </th>
 <td>
-<img src="images/MCTM/ActualImages/2s_b.gif"/>
+<img width="142" height="188" src="images/MCTM/ActualImages/2s_b.gif"/>
 </td>
 <td>
-<img src="images/MCTM/ActualImages/2s_w.gif"/>
-</td>
-</tr>
-<tr>
-<th>
-6000
-</th>
-<th>
-3 秒
-</th>
-<td>
-<img src="images/MCTM/ActualImages/3s_b.gif"/>
-</td>
-<td>
-<img src="images/MCTM/ActualImages/3s_w.gif"/>
+<img width="249" height="188" src="images/MCTM/ActualImages/2s_w.gif"/>
 </td>
 </tr>
 </table>
