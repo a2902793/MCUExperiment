@@ -1,8 +1,29 @@
-# 微處理機實驗考試
-這個教學只適用於108學年第1學期微處理機實驗課的期中考，所使用的板子型號是HT32F52352。
+<h1 align="center">@TKUEE / 微處理機實驗</h1>
+<p align="center">
+<a href="https://github.com/a2902793/MCU_Experiment/issues"><img alt="Issues" src="https://img.shields.io/github/issues/a2902793/MCU_Experiment.svg" height="20"/></a>
+<a href="https://github.com/a2902793/MCU_Experiment/stargazers"><img alt="StarMe" src="https://img.shields.io/github/stars/a2902793/MCU_Experiment.svg" height="20"/></a>
+<a href="https://github.com/a2902793/MCU_Experiment/graphs/contributors"><img alt="Contributors" src="https://img.shields.io/github/contributors/a2902793/MCU_Experiment.svg" height="20"/></a>
+<a href="https://github.com/a2902793/MCU_Experiment/graphs/commit-activity"><img alt="Maintained" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" height="20"/></a>
+</p>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;這個教學適用於淡江大學電機系三年級上學期微處理機實驗課（TETCB3B-0956）的同學以及那些想了解此塊開發板的人，其觀念 ***適用於其他微處理器*** 所以建議除了把上課內容弄懂之外，有時間的話也點進去各個功能去深入了解它們的原理與程式碼的撰寫。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;這門課使用的是盛群半導體股份有限公司（Holtek）的 `ESK32-30501 入門套件` 搭載 `ESK32-20001 擴充板` 做練習，其中 ESK32-30501 入門套件所使用的微處理器是 HT32F52352 ，是一顆採用 ARM Cortex-M0+ 核心的微處理器，內建多組計時器、兩個 I<sup>2</sup>C 、兩個 SPI 、兩個 USART 、兩個 UART 、 一個12位元 ADC 、 USB 、 I<sup>2</sup>S 、 EBI 
+等，可針對許多外部裝置進行試驗和開發原型。由於課堂時間有限，所以不會把所有的功能都教完，實際有教到的才會寫在這個教學中，詳情請看目錄。<br>
+<br>
+有問題歡迎開 issue 問我、內容可能有不足的也歡迎成為 contributor、最後如果這個教學對你有幫助的話也別忘記給個星星哦～:star:
+<br>
+
+<details>
+<summary>題外話（點我）</summary>
+我自己也是透過寫這個教學的過程中，知道怎麼去看datasheet、從中看懂各暫存器的功能、透過反推範例程式碼知道怎麼把較底層的位元操作包成較高階、淺顯易懂的API，於是在這裡把我日以繼夜研究一個多的月心得寫成教學，希望能幫你們省下一點時間。不得不說，其實反推別人的程式碼中可以學習到很多業界工程師寫的程式碼裡面的巧思，除了看教學外也非常鼓勵各位也能自己反推一遍。我想爾後如果遇到一個新的微處理器也不會怕了，就是一樣的流程而已：<ins>查看datasheet → 選擇要使用的功能 → 將位元運算包成API → 撰寫主要邏輯程式</ins>。總而言之，如果日後對軟硬體整合或是想當嵌入式系統工程師的同學，把這門課弄懂、學好 <b>受．益．良．多</b> 啊！
+<br />
+</details>
+<br>
 <br>
 <p align="center"><code>程式碼歸盛群半導體股份有限公司（Holtek）所有。</code></p>
-
+<br>
+<br>
 <p align="center"><h2>目錄</h2></p>
 
 <!--ts-->
@@ -15,6 +36,8 @@
     - [MCTM](#mctm)
 <!--te-->
 
+<br>
+<img src="images/ColoredLine.png">
 <br>
 <br>
 <p align="center"><h2 align="center"><code>前情提要</code></h2></p>
@@ -83,10 +106,12 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 <br>
 
 ### 4. 基本程式碼講解
-有些程式碼是開發版的基本設定，基本上每個自動生出來的範例裡面都有。基本上呢 ... 這些不會是你需要動到，也不太需要了解的（如果只是想應付這次考試的話可以直接跳到考題講解:smirk:）<br>
+有些程式碼是開發板的基本設定，基本上每個自動生出來的範例裡面都有。基本上呢 ... 這些不會是你需要動到，也不太需要了解的（如果只是想應付這次考試的話可以直接跳到考題講解:smirk:）<br>
 <del>也就是 `GPIO_PC, AFIO_PIN_1` 。往後的腳位都是用這個方法設定，也就是 GPIO 在前、AFIO 在後，為了講解方便 GPIO_P`C`, AFIO_PIN_`1`就簡稱 `C1`。</del>
 <br>
 <br>
+<br>
+<img src="images/ColoredLine.png">
 <br>
 <br>
 <p align="center"><h2 align="center"><code>原理講解</code></h2></p>
