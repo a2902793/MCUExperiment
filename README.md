@@ -18,12 +18,11 @@
 * 內容可能有不足的也歡迎成為 contributor
 * 最後如果這個教學對你有幫助的話也別忘記給個星星哦～:star:
 <br>
-<br>
-
 <details>
 <summary>題外話（點我）</summary>
 我自己也是透過寫這個教學的過程中，知道怎麼去看datasheet、從中看懂各暫存器的功能、透過反推範例程式碼知道怎麼把較底層的位元操作包成較高階、淺顯易懂的API，於是在這裡把我日以繼夜研究一個多的月心得寫成教學，希望能幫你們省下一點時間。不得不說，其實反推別人的程式碼中可以學習到很多業界工程師寫的程式碼裡面的巧思，除了看教學外也非常鼓勵各位也能自己反推一遍。我想爾後如果遇到一個新的微處理器也不會怕了，就是一樣的流程而已：<ins>查看datasheet → 選擇要使用的功能 → 將位元運算包成API → 撰寫主要邏輯程式</ins>。總而言之，如果日後對軟硬體整合或是想當嵌入式系統工程師的同學，把這門課弄懂、學好 <b>受．益．良．多</b> 啊！
 <br />
+
 </details>
 <br>
 <br>
@@ -49,19 +48,23 @@
 <p align="center"><h2 align="center"><code>前情提要</code></h2></p>
 
 ###  1. 準備環境
-a) 確認所需要的程式都已經安裝好，如果沒有的話可以參考上課PPT裡的步驟去下載檔案，我這裡也備份了 <a href="">Keil MDK</a> 和 <a href="安裝檔/Holtek_F5xxx_Firmware.zip">Holtek 的範例程式</a>。<br>
-
-a) 參考第一週投影片設置開發板的燒錄設定，確保以下設定都有做到，不然燒錄可能成功但板子不會有反應
+a) 確認所需要的程式都已經安裝好，如果沒有的話可以參考上課PPT裡的步驟去下載檔案，我這裡也備份了 <a href="">Keil MDK</a> 和 <a href="安裝檔/Holtek_F5xxx_Firmware.zip">Holtek 的範例程式</a>。<br><br>
+<img align="right" width="139" height="50" src="images/BoardConnector.png">
+b) 最常板子插上去沒反應的原因是：你插錯洞了！:flushed: <br>
+&nbsp;&nbsp;&nbsp;&nbsp;注意一下 micro-usb 線是要插在兩側 PULL HERE 中間的那個接頭（只有這個接頭有燒錄功能） →
+<br><br>
+c) 開啟 `Keil uVision 5`，然後參考第一週投影片設置開發板的燒錄設定，確保以下設定都有做到，不然燒錄可能成功但板子不會有反應
 * `Configure Flash Tools...` > `C/C++` > `Optimization`：下拉選單選取 `Level 0 (-O0)`
 * `Configure Flash Tools...` > `Debug` > `Use`：確認為 `CMSIS-DAP Debugger`
 * `Configure Flash Tools...` > `Debug` > `Settings` > `Flash Download`：`Reset and Run` 是打勾的
 
-b) 再依照題目選一範例進行修改
+d) 再依照題目選一範例進行修改
 <table>
 <tr>
 <td>
   
-  所有程式碼都改自官方提供的範例程式，不同範例存在不同資料夾內。基本上都存在下面的路徑內，實際路徑可能有些許不同，但都是在 `C:\Holtek\` 資料夾內，演示和路徑如右。
+  所有程式碼都改自官方提供的範例程式，不同範例存在不同資料夾內。<br>
+  學校的是在下面的路徑內，也可以使用你從<a href="https://www.holtek.com.tw/documents/10179/aa47cbc8-7203-4c7c-b311-3815080cbb2b">官網</a>或<a href="安裝檔/Holtek_F5xxx_Firmware.zip">我的備份</a>下載、解壓縮的資料夾。實際路徑可能有些許不同，但基本上如果沒有更改資料夾名字的話都是在 `HT32_STD_5xxxx_FWLib_v011_4188` 資料夾內，演示如右。
 </td>
 <td>
 <img src="images/Intro.gif"/>
@@ -81,7 +84,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 <tr>
 <td td colspan=4>
   
-  這裡以 `GPIO` 的 `InputOutput` 為例（如果只需要控制按鈕跟LED，修改這個範例就可以了），等執行完後會生出很多檔案和資料夾，進到 `MDK_ARMv5` 資料夾並執行 `Project_52352.uvprojx` ，演示和路徑如右。
+  這裡以 `GPIO` 的 `InputOutput` 為例（拿到一個新板子可以燒錄這個範例來測試板子 LED、GPIO 是否正常），等執行完後會生出很多檔案和資料夾，進到 `MDK_ARMv5` 資料夾並執行 `Project_52352.uvprojx` ，演示和路徑如右。
 </td>
 <td td colspan=8>
 <img src="images/CreateProject.gif"/>
