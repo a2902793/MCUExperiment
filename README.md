@@ -14,7 +14,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;這門課使用的是盛群半導體股份有限公司（Holtek）的 `ESK32-30501 入門套件` 搭載 `ESK32-20001 擴充板` 做練習，其中 ESK32-30501 入門套件所使用的微處理器是 HT32F52352 ，是一顆採用 ARM Cortex-M0+ 核心的微處理器，內建多組計時器、兩個 I<sup>2</sup>C 、兩個 SPI 、兩個 USART 、兩個 UART 、 一個12位元 ADC 、 USB 、 I<sup>2</sup>S 、 EBI 
 等，可針對許多外部裝置進行試驗和開發原型。由於課堂時間有限，所以不會把所有的功能都教完，實際有教到的才會寫在這個教學中，詳情請看目錄。<br>
 <br>
-有問題歡迎開 issue 問我、內容可能有不足的也歡迎成為 contributor、最後如果這個教學對你有幫助的話也別忘記給個星星哦～:star:
+* 有問題歡迎開 issue 問我
+* 內容可能有不足的也歡迎成為 contributor
+* 最後如果這個教學對你有幫助的話也別忘記給個星星哦～:star:
+<br>
 <br>
 
 <details>
@@ -46,7 +49,7 @@
 <p align="center"><h2 align="center"><code>前情提要</code></h2></p>
 
 ###  1. 準備環境
-a) 確認所需要的程式都已經安裝好，如果沒有的話可以參考上課PPT裡的步驟去下載檔案，我這裡也備份了 <a href="安裝檔/mdk528a.exe">Keil MDK</a> 和 <a href="安裝檔/Holtek_F5xxx_Firmware.zip">Holtek 的範例程式</a>。<br>
+a) 確認所需要的程式都已經安裝好，如果沒有的話可以參考上課PPT裡的步驟去下載檔案，我這裡也備份了 <a href="">Keil MDK</a> 和 <a href="安裝檔/Holtek_F5xxx_Firmware.zip">Holtek 的範例程式</a>。<br>
 
 a) 參考第一週投影片設置開發板的燒錄設定，確保以下設定都有做到，不然燒錄可能成功但板子不會有反應
 * `Configure Flash Tools...` > `C/C++` > `Optimization`：下拉選單選取 `Level 0 (-O0)`
