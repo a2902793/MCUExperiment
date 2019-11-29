@@ -43,6 +43,8 @@
 <p align="center"><h2 align="center"><code>前情提要</code></h2></p>
 
 ###  1. 準備環境
+a) 確認所需要的程式都已經安裝好，如果沒有的話可以參考上課PPT裡的步驟去下載檔案，我這裡也備份了 <a href="安裝檔/mdk528a.exe">Keil MDK</a> 和 <a href="安裝檔/Holtek_F5xxx_Firmware.zip">Holtek 的範例程式</a>。<br>
+
 a) 參考第一週投影片設置開發板的燒錄設定，確保以下設定都有做到，不然燒錄可能成功但板子不會有反應
 * `Configure Flash Tools...` > `C/C++` > `Optimization`：下拉選單選取 `Level 0 (-O0)`
 * `Configure Flash Tools...` > `Debug` > `Use`：確認為 `CMSIS-DAP Debugger`
@@ -100,7 +102,7 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 
 |範例|功能|
 |---|---|
-|GPIO|General Purpose Input/Output (GPIO) 代表通用通用型之輸入輸出，功能是基本高低電位的輸入輸出|
+|GPIO|General Purpose Input/Output (GPIO) 代表通用型之輸入輸出，功能是基本高低電位的輸入輸出|
 |MCTM|Motor Control Timer (MCTM) 代表馬達控制計時器，可用於多種用途，包括通用計時、測量輸入信號脈衝寬度或產生輸出波形，如單脈衝或 PWM 輸出。|
 
 <br>
