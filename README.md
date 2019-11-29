@@ -1,3 +1,6 @@
+<p align="center">
+<a href="https://github.com/a2902793/MCU_Experiment/blob/master/Logo-Disclaimer"><img alt="Logo Disclaimer" src="images/Logo.png" width="375" height="150"/></a>
+</p>
 <h1 align="center">@TKUEE / 微處理機實驗</h1>
 <p align="center">
 <a href="https://github.com/a2902793/MCU_Experiment/issues"><img alt="Issues" src="https://img.shields.io/github/issues/a2902793/MCU_Experiment.svg" height="20"/></a>
