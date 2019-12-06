@@ -19,19 +19,16 @@
 * 最後如果這個教學對你有幫助的話也別忘記給個星星哦～:star:
 <br>
 <details>
-<summary>題外話（點我）</summary>
+<summary><b>題外話（點我）</b></summary>
 我自己也是透過寫這個教學的過程中，知道怎麼去看datasheet、從中看懂各暫存器的功能、透過反推範例程式碼知道怎麼把較底層的位元操作包成較高階、淺顯易懂的API，於是在這裡把我日以繼夜研究一個多的月心得寫成教學，希望能幫你們省下一點時間。不得不說，其實反推別人的程式碼中可以學習到很多業界工程師寫的程式碼裡面的巧思，除了看教學外也非常鼓勵各位也能自己反推一遍。我想爾後如果遇到一個新的微處理器也不會怕了，就是一樣的流程而已：<ins>查看datasheet → 選擇要使用的功能 → 將位元運算包成API → 撰寫主要邏輯程式</ins>。總而言之，如果日後對軟硬體整合或是想當嵌入式系統工程師的同學，把這門課弄懂、學好 <b>受．益．良．多</b> 啊！
 <br />
-
 </details>
-<br>
 <br>
 <p align="center"><code>程式碼歸盛群半導體股份有限公司（Holtek）所有。</code></p>
 <br>
-<br>
 <p align="center"><h2>目錄</h2></p>
 
-<!--ts-->
+<!--table of content-->
 - [前情提要](#前情提要)
     1. [準備環境](#1-準備環境)
     2. [思考步驟](#2-思考步驟)
@@ -39,16 +36,16 @@
     4. [基本程式碼講解](#4-基本程式碼講解)
 - [原理講解](#原理講解)
     - [MCTM](#mctm)
-<!--te-->
+<!--/table of content-->
 
 <br>
 <img src="images/ColoredLine.png">
 <br>
 <br>
-<p align="center"><h2 align="center"><code>前情提要</code></h2></p>
+<h2 align="center"><code>前情提要</code></h2>
 
 ###  1. 準備環境
-a) 確認所需要的程式都已經安裝好，如果沒有的話可以參考上課PPT裡的步驟去下載檔案，我這裡也備份了 <a href="">Keil MDK</a> 和 <a href="安裝檔/Holtek_F5xxx_Firmware.zip">Holtek 的範例程式</a>。<br><br>
+a) 確認所需要的程式都已經安裝好，如果沒有的話可以參考上課PPT裡的步驟去下載檔案，我這裡也備份了 <a href="">Keil MDK</a> 和 <a href="4. 安裝檔/Holtek_F5xxx_Firmware.zip">Holtek 的範例程式</a>。<br><br>
 <img align="right" width="139" height="50" src="images/BoardConnector.png">
 b) 最常板子插上去沒反應的原因是：你插錯洞了！:flushed: <br>
 &nbsp;&nbsp;&nbsp;&nbsp;注意一下 micro-usb 線是要插在兩側 PULL HERE 中間的那個接頭（只有這個接頭有燒錄功能） →
@@ -78,7 +75,7 @@ d) 再依照題目選一範例進行修改
 </tr>
 </table>
 
-c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它會自動幫你生成所需要的專案和程式碼。
+e) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它會自動幫你生成所需要的專案和程式碼。
 
 <table cellspacing="12">
 <tr>
@@ -113,218 +110,8 @@ c) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 |---|---|
 |GPIO|General Purpose Input/Output (GPIO) 代表通用型之輸入輸出，功能是基本高低電位的輸入輸出|
 |MCTM|Motor Control Timer (MCTM) 代表馬達控制計時器，可用於多種用途，包括通用計時、測量輸入信號脈衝寬度或產生輸出波形，如單脈衝或 PWM 輸出。|
-
 <br>
 
 ### 4. 基本程式碼講解
 有些程式碼是開發板的基本設定，基本上每個自動生出來的範例裡面都有。基本上呢 ... 這些不會是你需要動到，也不太需要了解的（如果只是想應付這次考試的話可以直接跳到考題講解:smirk:）<br>
 <del>也就是 `GPIO_PC, AFIO_PIN_1` 。往後的腳位都是用這個方法設定，也就是 GPIO 在前、AFIO 在後，為了講解方便 GPIO_P`C`, AFIO_PIN_`1`就簡稱 `C1`。</del>
-<br>
-<br>
-<br>
-<img src="images/ColoredLine.png">
-<br>
-<br>
-<p align="center"><h2 align="center"><code>原理講解</code></h2></p>
-<br>
-
-## MCTM
-
-<table>
-<tr>
-<td>
-  1
-</td>
-<td>
- 
-  假設系統是一個 `10Hz` 的時鐘，也就是說一秒會有 10 個脈波。
-</td>
-<td>
-<img src="images/MCTM/Clock.png"/>
-</td>
-</tr>
-<tr>
-<td>
-  2
-</td>
-<td>
-	
-  有一個計數器叫 `HTCFG_MCTM_RELOAD`
-  <br>
-  其值等於 `5`，也就是每一個脈波就計數一次、數五次 (0、1、2、3、4) 就重新計數
-</td>
-<td>
-<img src="images/MCTM/Count.png"/>
-</td>
-</tr>
-<tr>
-<td>
-  3
-</td>
-<td>
- 
-  這個是重置的狀態，以這張圖為例表示發生了兩次重置（重新計數）。
-</td>
-<td>
-<img src="images/MCTM/Reset.png"/>
-</td>
-</tr>
-<tr>
-<td>
-  4
-</td>
-<td>
-	
-  所以系統時鐘、計數器、重置的情況疊在一起像這樣。
-</td>
-<td>
-<img src="images/MCTM/3in1.png"/>
-</td>
-</tr>
-</table>
-<br>
-<p align="center">———————&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;到這裡都還能理解吧？上面有看懂再往下看&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;———————</p>
-<br>
-<table>
-<tr>
-<td>
-  5
-</td>
-<td>
-	
-  MCTM 裡面有個很重要的變數叫 `prescalar` 是用來除頻，換句話說就是 `頻率除以某數` 來調整 Clock 一秒數幾次。
-  <br>
-  
-  原先 Clock 一秒數 `10次`，今天你新創了一個 Clock 想要一秒數 `5次`，就把 `prescalar` 設成 `2`，新的頻率就會是 `10/prescalar次` `prescalar=2`。
-</td>
-<td>
-<img src="images/MCTM/NewClock.png"/>
-<br>
-
-  :mega: 注意哦～計數器沒變，仍然是 `一個脈波數一次，數5次就重置`
-</td>
-</tr>
-<tr>
-<th rowspan="4">
-  6
-</th>
-<td rowspan="4">
-比較一下兩者的不同，同樣都是
-<br><br>
-<p align="center"><code>一個脈波數一次，數5次就重置</code></p>
-<br>
-<img align="center" height="43" src="images/MCTM/PrescalerExplanation.png"/>
-</td>
-<th>	
-系統 Clock
-</th>
-</tr>
-<tr>
-<td>
-<img src="images/MCTM/Comp_OriginalClock.png"/>
-</td>
-</tr>
-<tr>
-<th>
-Prescalar=2 的 Clock
-</th>
-</tr>
-<tr>
-<td>
-<img src="images/MCTM/Comp_NewClock.png"/>
-</td>
-</tr>
-<tr>
-</tr>
-<tr>
-<td>
-  7
-</td>
-<td>
-	
-  最後一個要理解的功能是 `Compare` 也就是一個比較值，它會跟計數器比較：
-<br>
-<p align="center"><code>小於則低電位、大於等於則高電位</code></p>
-</td>
-<td>
-<img src="images/MCTM/Compare.png"/><br><br>
-<img src="images/MCTM/MathEquation2.png"/>
-</td>
-</tr>
-<tr>
-<td>
-  8
-</td>
-<td>
-	
-  實際情況是：<br><br>
-  * 系統時鐘 `48MHz` <br>
-  * 計數器 (`HTCFG_MCTM_RELOAD`) = 48MHz/2000 = `24000` <br>
-  * `Compare` 是設成 `1/2`，也就是一半的時間 High、一半的時間 Low
-</td>
-<td>
-<img src="images/MCTM/3in1.png"/>
-</td>
-</tr>
-</table>
-
-<br>
-
-<table>
-<tr>
-<th>
-Prescaler
-</th>
-<th>
-換算秒數
-</th>
-<th>
-實際影像
-</th>
-<th>
-波形圖
-</th>
-</tr>
-<tr>
-<th>
-1000
-</th>
-<th>
-0.5 秒
-</th>
-<td>
-<img width="142" height="188" src="images/MCTM/ActualImages/0.5s_b.gif"/>
-</td>
-<td>
-<img width="249" height="188" src="images/MCTM/ActualImages/0.5s_w.gif"/>
-</td>
-</tr>
-<tr>
-<th>
-2000
-</th>
-<th>
-1 秒
-</th>
-<td>
-<img width="142" height="188" src="images/MCTM/ActualImages/1s_b.gif"/>
-</td>
-<td>
-<img width="249" height="188" src="images/MCTM/ActualImages/1s_w.gif"/>
-</td>
-</tr>
-<tr>
-<th>
-4000
-</th>
-<th>
-2 秒
-</th>
-<td>
-<img width="142" height="188" src="images/MCTM/ActualImages/2s_b.gif"/>
-</td>
-<td>
-<img width="249" height="188" src="images/MCTM/ActualImages/2s_w.gif"/>
-</td>
-</tr>
-</table>

@@ -1,0 +1,24 @@
+<table>
+<tr>
+<td>
+範例
+</td>
+<td>
+功能
+</td>
+</tr>
+<tr>
+<td>
+GPIO
+</td>
+<td>
+General Purpose Input/Output (GPIO) 代表通用型之輸入輸出，功能是基本高低電位的輸入輸出
+<br><br>
+<details>
+<summary><b>詳細講解</b></summary>
+<br>
+可以展開喔~
+</details>
+</td>
+</tr>
+</table>
