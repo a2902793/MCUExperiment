@@ -1,16 +1,49 @@
 ## GPIO
 <!--table of content-->
-- [簡單介紹](#簡單介紹)
-    1. [設定方式](#1-設定方式)
-- [詳細講解](#詳細講解)
+<hr>
+<table>
+<tr>
+<th>第一週<br>第二週</th>
+<th>第三週</th>
+<th>第四週</th>
+<th>第五週</th>
+<th>第六週</th>
+<th>第七週</th>
+<th>第八週</th>
+<th>第九週</th>
+<th>第十週</th>
+<th>...</th>
+</tr>
+<tr>
+<td><p align="center"><a href="">README</a></p></td>
+<td><p align="center"><a href="">CKCU</a></p></td>
+<td>
+<table><tr><td>
 
+### GPIO / AFIO
+&nbsp;&nbsp;&nbsp;&#9679;&nbsp;&nbsp;[簡單介紹](#簡單介紹)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;&nbsp;[設定方式](#1-設定方式)<br>
+<img height="3" width="150" src="../images/ColoredLine.png">
+
+&nbsp;&nbsp;&nbsp;&#9679;&nbsp;&nbsp;[詳細講解](#詳細講解)<br>
+</td></tr></table>
+</td>
+<td><p align="center"><a href="">EXTI<br>NVIC</a></p></td>
+<td><p align="center"><a href="">BFTM</a></p></td>
+<td><p align="center"><a href="">GPTM<br>MCTM</a></p></td>
+<td><p align="center"><a href="">期中考</a></p></td>
+<td><p align="center"><a href="">ADC</a></p></td>
+<td><p align="center"><a href="">I&#0178;C<br>EEPROM</a></p></td>
+<td>&nbsp;&nbsp;...&nbsp;&nbsp;</td>
+</tr>
+</table>
+<hr>
 <!--/table of content-->
-<img src="../images/ColoredLine.png">
-<br><br>
+<br>
 <h2 align="center"><code>簡單介紹</code></h2>
 
 ### 1. 設定方式
-通常範例程式裡面為了排版較好閱讀會將 GPIO 的設定移至成獨立的一個副函式名為 `GPIO_Configuration`。和 [CKCU 的設定](https://www.github.com/a2902793/MCU_Experiment/blob/master/1.%20原理講解/CKCU.md#詳細講解) 稍不同的是，只有少數必要的 GPIO 腳位會是原先預設啟用的其餘都是未設定的，所以一樣也是 **需要用到什麼再開什麼**。
+通常範例程式裡面為了排版較好閱讀會將 GPIO 的設定移至成獨立的一個副函式名為 `GPIO_Configuration`。和 [CKCU 的設定](https://www.github.com/a2902793/MCU_Experiment/blob/master/1.%20原理講解/CKCU.md#1-設定方式) 稍不同的是，只有少數必要的 GPIO 腳位會是原先預設啟用的其餘都是未設定的，所以一樣也是 **需要用到什麼再開什麼**。
 ```c
 void GPIO_Configuration(void)
 {
