@@ -29,14 +29,14 @@
 <!--table of content-->
 <hr>
 <table>
-<tr>
+<tr></tr>
 <th>第一週<br>第二週</th>
 <th>第三週</th>
 <th>第四週</th>
 <th>第五週</th>
 <th>第六週</th>
 <th>第七週</th>
-<th>第八週</th>
+<th rowspan="2">期<br>中<br>考</th>
 <th>第九週</th>
 <th>第十週</th>
 <th>...</th>
@@ -58,7 +58,6 @@
 <td><p align="center"><a href="">EXTI<br>NVIC</a></p></td>
 <td><p align="center"><a href="">BFTM</a></p></td>
 <td><p align="center"><a href="">GPTM<br>MCTM</a></p></td>
-<td><p align="center"><a href="">期中考</a></p></td>
 <td><p align="center"><a href="">ADC</a></p></td>
 <td><p align="center"><a href="">I&#0178;C<br>EEPROM</a></p></td>
 <td>&nbsp;&nbsp;...&nbsp;&nbsp;</td>
@@ -68,14 +67,6 @@
 <!--/table of content-->
 <br>
 <h2 align="center"><code>前情提要</code></h2>
-
-<!---
-### 2. 思考步驟
-1. 需要用到什麼元件？
-2. 怎麼用？
-3. 在main裡寫邏輯
-<br><br>
---->
 
 ### 1. 教學怎麼看？
 所有的頁面都會照下面的方式呈現，主要分四大部分：<b>主題</b>、<b>目錄</b>、<b>簡單介紹</b>、<b>詳細講解</b>，其內容如下。

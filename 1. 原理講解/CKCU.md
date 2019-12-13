@@ -2,14 +2,14 @@
 <!--table of content-->
 <hr>
 <table>
-<tr>
-</tr><th>第一週<br>第二週</th>
+<tr></tr>
+<th>第一週<br>第二週</th>
 <th>第三週</th>
 <th>第四週</th>
 <th>第五週</th>
 <th>第六週</th>
 <th>第七週</th>
-<th>第八週</th>
+<th rowspan="2">期<br>中<br>考</th>
 <th>第九週</th>
 <th>第十週</th>
 <th>...</th>
@@ -31,7 +31,6 @@
 <td><p align="center"><a href="">EXTI<br>NVIC</a></p></td>
 <td><p align="center"><a href="">BFTM</a></p></td>
 <td><p align="center"><a href="">GPTM<br>MCTM</a></p></td>
-<td><p align="center"><a href="">期中考</a></p></td>
 <td><p align="center"><a href="">ADC</a></p></td>
 <td><p align="center"><a href="">I&#0178;C<br>EEPROM</a></p></td>
 <td>&nbsp;&nbsp;...&nbsp;&nbsp;</td>
