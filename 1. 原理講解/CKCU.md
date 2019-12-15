@@ -48,7 +48,7 @@ void CKCU_Configuration(void)
 {
   CKCU_PeripClockConfig_TypeDef CKCUClock = {{ 0 }};    // 將全部的 Clock 關掉
                                                         // 你要用到什麼功能就在這裡啟用它的 Clock，例如：
-  CKCUClock.Bit.PC		   = 1;                         // 啟動 Port C 的 Clock
+  CKCUClock.Bit.PC = 1;                                 // 啟動 Port C 的 Clock
   CKCU_PeripClockConfig(CKCUClock, ENABLE);             // 最後將上面所有的設定寫入
 }
 ```

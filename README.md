@@ -12,7 +12,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;這個教學適用於淡江大學電機系三年級上學期微處理機實驗課（TETCB3B-0956）的同學以及那些想了解此塊開發板的人，其觀念 ***適用於其他微處理器*** 所以建議除了把上課內容弄懂之外，有時間的話也點進去各個功能去深入了解它們的原理與程式碼的撰寫。<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;這門課使用的是盛群半導體股份有限公司（Holtek）的 [`ESK32-30501 入門套件`](https://www.holtek.com.tw/esk32-30501) 搭載 [`ESK32-20001 擴充板`](https://www.holtek.com.tw/ESK32-20001) 做練習，其中 ESK32-30501 入門套件所使用的微處理器是 HT32F52352 ，是一顆採用 ARM Cortex-M0+ 核心的微處理器，內建多組計時器、兩個 I<sup>2</sup>C 、兩個 SPI 、兩個 USART 、兩個 UART 、 一個12位元 ADC 、 USB 、 I<sup>2</sup>S 、 EBI 
-等，可針對許多外部裝置進行試驗和開發原型。由於課堂時間有限，所以不會把所有的功能都教完，實際有教到的才會寫在這個教學中，詳情請看目錄。<br>
+等，<del>可針對許多外部裝置進行試驗和開發原型</del>。由於課堂時間有限，所以不會把所有的功能都教完，實際有教到的才會寫在這個教學中，詳情請看目錄。<br>
 <br>
 * 有問題歡迎開 issue 問我
 * 內容可能有不足的也歡迎成為 contributor
@@ -26,8 +26,10 @@
 <br>
 <p align="center"><code>程式碼歸盛群半導體股份有限公司（Holtek）所有。</code></p>
 <br>
-<!--table of content-->
 <hr>
+<!--table of content-->
+<br>
+<h2 align="center"><code>目 錄</code></h2>
 <table>
 <tr></tr>
 <th>第一週<br>第二週</th>
@@ -47,10 +49,9 @@
 
 ### README
 &nbsp;&nbsp;&nbsp;&#9679;&nbsp;&nbsp;[前情提要](#前情提要)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;&nbsp;[教學怎麼看？]()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;&nbsp;[教學怎麼看？](#1-教學怎麼看)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;&nbsp;[準備環境](#2-準備環境)<br>
-<!-- <img height="3" width="150" src="images/ColoredLine.png"> -->
-&nbsp;&nbsp;&nbsp;&#9679;&nbsp;&nbsp;[範例介紹](#範例介紹)<br>
+&nbsp;&nbsp;&nbsp;&#9679;&nbsp;&nbsp;[範例介紹](#功能介紹)<br>
 </td></tr></table>
 </td>
 <td><p align="center"><a href="">CKCU</a></p></td>
@@ -63,8 +64,9 @@
 <td>&nbsp;&nbsp;...&nbsp;&nbsp;</td>
 </tr>
 </table>
-<hr>
+<br><br>
 <!--/table of content-->
+<hr>
 <br>
 <h2 align="center"><code>前情提要</code></h2>
 
@@ -100,14 +102,8 @@
 <td colspan="2">
 <img width="260" height="6" src="images/ColoredLine.png">
  <code>以彩虹線隔開</code> 
-<img width="260" height="6" src="https://i.ibb.co/5861ZfF/157583587944320332.png">
+<img width="260" height="6" src="https://i.ibb.co/5861ZfF/157583587944320332.png"><!--temporary picture -->
 </td>
-<!-- 
-</td>
-</tr>
-<tr>
-<td>
- -->
 </tr>
 <tr>
 <th>詳細講解</th>
@@ -184,11 +180,34 @@ e) 點進所想要使用的範例程式後，執行 `_CreateProject.bat`，它�
 <br>
 <hr>
 <br>
-<h2 align="center"><code>範例介紹</code></h2>
+<h2 align="center"><code>功能介紹</code></h2>
 
-|範例|功能|
-|---|---|
-|GPIO|General Purpose Input/Output (GPIO) 代表通用型之輸入輸出，功能是基本高低電位的輸入輸出|
-|MCTM|Motor Control Timer (MCTM) 代表馬達控制計時器，可用於多種用途，包括通用計時、測量輸入信號脈衝寬度或產生輸出波形，如單脈衝或 PWM 輸出。|
+<table>
+<tr>
+<td>名稱</td>
+<td>功能</td>
+</tr>
+<tr>
+<td>GPIO</td>
+<td>
+<u>G</u>eneral <u>P</u>urpose <u>I</u>nput/<u>O</u>utput (<u>GPIO</u>) 代表通用型之輸入輸出，功能是基本高低電位的輸入輸出。
+</td>
+</tr>
+<tr>
+<td>MCTM</td>
+<td>
+
+<u>M</u>otor <u>C</u>ontrol <u>T</u>i<u>m</u></b>er (<u>MCTM</u>)
+代表馬達控制計時器，可用於多種用途，包括通用計時、測量輸入信號脈衝寬度或產生輸出波形，如單脈衝或 PWM 輸出。
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</table>
+
 <br>
 <p align="right"><a href="https://github.com/a2902793/MCU_Experiment/blob/master/1.%20原理講解/CKCU.md"><b>開始閱讀吧！<br>&#128073; CKCU&nbsp;</b></a></p>
