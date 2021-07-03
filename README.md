@@ -100,9 +100,9 @@
 </td>
 <tr>
 <td colspan="2">
-<img width="260" height="6" src="images/ColoredLine.png">
+<img width="240" height="6" src="images/ColoredLine.png">
  <code>以彩虹線隔開</code> 
-<img width="260" height="6" src="https://i.ibb.co/5861ZfF/157583587944320332.png"><!--temporary picture -->
+<img width="240" height="6" src="https://i.ibb.co/5861ZfF/157583587944320332.png"><!--temporary picture -->
 </td>
 </tr>
 <tr>
@@ -111,7 +111,7 @@
 這裡是給那些想深入知道背後原理、為什麼程式要這樣寫、為什麼參數要給那個...等等的人，會配合板子的 datasheet 從 <u>main.c</u> 回推到 <u>驅動函式庫</u> 、甚至部分會更深一步回推到 <u>組語檔</u> 來講解，再以記憶體視窗實際觀看暫存器的值來驗證講解的內容。<br><br>
 <details>
 <summary>
-&#128190;記憶體視窗怎麼看？ (點我)<br>
+&#128190; 記憶體視窗怎麼看？ (點我)<br>
 </summary>
 在講怎麼看記憶體視窗之前，如果不知道 Little-Endian 這個東西的同學，建議先閱讀一下<a href="https://www.github.com/a2902793/MCU_Experiment/blob/master/1.%20原理講解/Endian.md#1-設定方式">位元組順序</a>再跳回來看。以第三周時鐘控制器 (CKCU) 為例：
 
